@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="http://fonts.googleapis.com/css?family=Varela" rel="stylesheet" />
+<link href="css/default.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/fonts.css" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" href="css/timercss.css">
+
+<style>
+	ul.rulelist li
+	{
+		list-style-type:disc;
+	}
+</style>
+
+<!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
+
+</head>
+<body>
+<div id="wrapper">
+	<div id="header-wrapper">
+	<div id="header" class="container">
+		<div id="logo">
+			<h1 style="margin-top:20px; font-style: calibri;padding-left: 16em;">Mind Unwind</h1>
+		</div>
+		
+	</div>
+	</div>
+	<div id="banner" style="background:url('img/back4.png');background-size :cover; background-repeat:no-repeat; opacity:0.9;">
+		<div class="container">
+			<div class="title" ><br>
+				<h2 style="color:#161887;"><b>Analysis Test 1.0</b></h2><br><br>
+				<span class="byline" style="color:black; font-size:30px;"><b>Apr 2 2018, 08:30 pm IST to Apr 2 2018, 09:30 pm IST</b></span> </div>
+			<ul class="actions">
+				<li style="font-size:15px; "><a href="3.php" class="button"><b>Start test</b></a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="extra" class="container">
+		<div class="title">
+			<h2>Starts In</h2>
+			<span class="byline"></span> </div>
+			
+		<div id="three-column">
+			<div id="countdown">
+				  <div id='tiles'></div>
+				  <div class="labels">
+				    <li>Days</li>
+				    <li>Hours</li>
+				    <li>Mins</li>
+				    <li>Secs</li>
+				  </div>
+				</div>
+
+
+		</div>
+			
+
+		
+	</div>
+	<div id="featured">
+			<div class="title"><br>
+				<h2>About</h2>
+				<span class="byline"></span> </div>
+			<ul style="font-size:25px; text-align:left; color:#000; list-style-type:disc; margin:10px 0px;">
+				<li style="margin-top:10px; margin-left:40px;">The test comprises of 21 questions.</li>
+				<li style="margin-top:10px; margin-left:40px;">There are four alternatives given to each of the question.</li>
+				<li style="margin-top:10px; margin-left:40px;">Out of the given four alternatives you have to choose only one alternative compulsorily.</li>
+				<li style="margin-top:10px;margin-left:40px;">The time alloted to each question	is 60 seconds.</li>
+				<li style="margin-top:10px;margin-left:40px;">After 60 seconds, if you don't answer any question, the next question would	be displayed and score won't be counted towards further progress.</li>
+			</ul>
+
+		
+		
+		
+	</div>
+	<div id="page">
+		<div class="title">
+			<h2 style="color:black;">Rules</h2>
+			<span class="byline"></span> </div>
+		<ul style="font-size:25px; text-align:left; color:#141263;list-style-type:disc;margin:10px 0px;">
+				<li style="margin-top:10px;margin-left:40px;">Attempt each question.</li>
+				<li style="margin-top:10px;margin-left:40px;">Do not use mobile, calculator or any of the electronic devices during the test.</li>
+				<li style="margin-top:10px;margin-left:40px;">The test is available only during provided specific schedule</li>
+			</ul>		
+	</div>
+</div>
+<div id="copyright" class="container">
+	<p>&copy; All rights reserved. | Designed by THE PHOENIX developers</p>
+</div>
+</body>
+</html>
+<script>
+
+	var target_date = new Date().getTime() + (1000*3600*48); // set the countdown date
+	var days, hours, minutes, seconds; // variables for time units
+
+	var countdown = document.getElementById("tiles"); // get tag element
+
+	getCountdown();
+
+	setInterval(function () { getCountdown(); }, 1000);
+
+	function getCountdown(){
+
+		// find the amount of "seconds" between now and target
+		var current_date = new Date().getTime();
+		var seconds_left = (target_date - current_date) / 1000;
+
+		days = pad( parseInt(seconds_left / 86400) );
+		seconds_left = seconds_left % 86400;
+			 
+		hours = pad( parseInt(seconds_left / 3600) );
+		seconds_left = seconds_left % 3600;
+			  
+		minutes = pad( parseInt(seconds_left / 60) );
+		seconds = pad( parseInt( seconds_left % 60 ) );
+		//alert(days+' '+hours+' '+seconds+' '+minutes);
+		// format countdown string + set tag value
+		countdown.innerHTML = "<span>" + days + "</span><span>" + hours + "</span><span>" + minutes + "</span><span>" + seconds + "</span>"; 
+	}
+
+	function pad(n) {
+		return (n < 10 ? '0' : '') + n;
+	}
+
+
+</script>
